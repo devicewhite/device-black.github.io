@@ -16,4 +16,3 @@ sudo rm -r ~/pawn
 clear
 
 echo Pawncc Instalado Com sucesso 
-echo Inscreva-se no canal Tarime
