@@ -5,36 +5,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <script>
-        const palavrasOfensivas = [];
-
-        // Carrega as palavras ofensivas do arquivo "ofensas.txt"
-        fetch("ofensas.txt")
-          .then(response => response.text())
-          .then(data => {
-            palavrasOfensivas.push(...data.split("\n"));
-          })
-          .catch(error => console.error(error));
-
-        function filtrarTexto(texto) {
-            for (let i = 0; i < palavrasOfensivas.length; i++) {
-                const regex = new RegExp('\\b' + palavrasOfensivas[i] + '\\b', 'gi');
-                texto = texto.replace(regex, '*'.repeat(palavrasOfensivas[i].length));
-            }
-            return texto;
-        }
-
-        function handleRequest(request) {
-            const url = new URL(request.url);
-            const texto = url.searchParams.get('texto');
-            const textoFiltrado = filtrarTexto(texto);
-            document.body.innerHTML = textoFiltrado;
-        }
-
-        addEventListener('fetch', event => {
-            event.respondWith(handleRequest(event.request));
-        });
-    </script>
+    Hello World
 </body>
 </html>
 
