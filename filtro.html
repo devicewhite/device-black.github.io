@@ -5,6 +5,14 @@
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
+			var request = new XMLHttpRequest();
+			request.open('GET', 'ofensas.txt', true);
+			request.onload = function() {
+				if(request.status >= 200 && request.status < 400) {
+					var linhas = request.responseText.split('\n');
+					
+				}
+			}
 			document.getElementById("body").innerHTML = "Hi World";
 		});
 	</script>
