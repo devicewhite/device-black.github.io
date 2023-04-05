@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Formosa:MP Fazueli</title>
-		<style>
-			html, body {
-				margin: 0;
-				padding: 0;
-			}
-			
-			.logo {
-				position: fixed;
-				width: 100%;
-				height: 100%;
-			}
+  <head>
+    <title>Reprodução de áudio com a API Web Audio</title>
+  </head>
+  <body>
+    <h1>Reprodução de áudio com a API Web Audio</h1>
 
-		</style>
-	</head>
-	<body>
-		<audio preload="auto" controls autoplay>
-			<source type="audio/mp3" src="https://formosamp.com.br/formosa.mp3" />
-		</audio>
+    <button onclick="playAudio()">Reproduzir</button>
 
-		<img src="https://device-black.github.io/FormosaMP/images/www.samp.pw.png" class="logo" />
-	</body>
+    <script>
+      function playAudio() {
+        // cria uma nova instância do contexto de áudio
+        const audioContext = new AudioContext();
+
+        // carrega o arquivo de áudio
+        const audioFile = 'https://formosamp.com.br/formosa.mp3';
+
+        // cria um novo objeto de requisição HTTP
+        const request = new XMLHttpRequest();
+        request.open('GET', audioFile, true);
+        request.responseType = 'arraybuffer';
+
+        // carrega o arquivo de áudio como um array de bytes
+        request.onload = function() {
+          const audioData = request.response;
+
+          // decodifica o array de bytes em um buffer de áudio
+          audioContext.decodeAudioData(audioData, function(buffer) {
+            // cria um novo nó de fonte de áudio
+            const source = audioContext.createBufferSource();
+            source.buffer = buffer;
+
+            // conecta a fonte de áudio à saída de áudio do contexto
+            source.connect(audioContext.destination);
+
+            // inicia a reprodução do áudio
+            source.start();
+          });
+        };
+
+        // envia a requisição HTTP para carregar o arquivo de áudio
+        request.send();
+      }
+    </script>
+  </body>
 </html>
