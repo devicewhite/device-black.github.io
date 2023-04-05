@@ -17,11 +17,24 @@
 		</style>
 	</head>
 	<body>
-		<img src="https://device-black.github.io/FormosaMP/images/www.samp.pw.png" class="logo" />
-		
-		<audio autoplay>
+		<audio id="music" controls autoplay>
 			<source type="audio/mpeg" src="https://formosamp.com.br/formosa.mp3" />
-
 		</audio>
+
+		<img src="https://device-black.github.io/FormosaMP/images/www.samp.pw.png" class="logo" />
 	</body>
+	<script>
+		// obtém a referência para o elemento HTML
+		const element = document.getElementById('music');
+		
+		// cria um novo evento de toque
+		const touchEvent = new TouchEvent('touchstart', {
+		  bubbles: true,
+		  cancelable: true,
+		  view: window
+		});
+		
+		// dispara o evento de toque no elemento
+		element.dispatchEvent(touchEvent);
+	</script>
 </html>
