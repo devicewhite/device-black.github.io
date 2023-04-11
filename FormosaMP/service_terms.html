@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Formosa:MP - Termos de Serviço</title>
+		<style>
+			html, body {
+				border: none;
+				margin: none;
+				padding: none;
+				max-width: 1920px;
+				max-height: 1080px;
+				width: 100%;
+				height: 100%;
+			}
+	
+			.bg-system {
+				background-color: rgba(0, 0, 0, 0.5);
+				position: fixed;
+				border-radius: 10px;
+			}
+			
+			.bg-system .perfil {
+				width: 64px;
+				height: 64px;
+				margin: 15px 0px 7.5px calc(50% - 32px);
+			}
+			
+			.service-terms {
+				background-color: rgba(0, 0, 0, 0.5);
+				margin: 7.5px 15px 7.5px 15px;
+				border: 2px solid gray;
+				border-radius: 10px;
+				height: 200px;
+				overflow: auto;
+			}
+			
+			.service-terms legend {
+				font-weight: bold;
+				color: white;
+			}
+			
+			.service-terms p {
+				margin: 0;
+				font-size: 10px;
+				max-width: calc(3 * 128px);
+				color: white;
+			}
+			
+			.service-terms .title {
+				font-weight: bold;
+				color: gold;
+			}
+			
+			.bg-system button {
+				width: 96px;
+				padding: 5px;
+				border-radius: 10px;
+				border: 2px solid gray;
+				background-color: rgba(0, 0, 0, 0.5);
+				margin: 7.5px 0px 15px calc(50% - 48px);
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bg-system">
+			<img class="perfil" src="images/perfil.png" />
+
+			<fieldset class="service-terms">
+				<legend>Termos de Serviço:</legend>
+				<p>Bem-vindo ao servidor Formosa Roleplay. Antes de acessar o nosso servidor, pedimos que leia cuidadosamente estes Termos de Serviço, que estabelecem os termos e condições para o uso dos nossos serviços.</p>
+				<br />
+				
+				<p class="title">Serviços oferecidos</p>
+				<p>O servidor Formosa Roleplay é um ambiente virtual que tem como objetivo oferecer uma experiência de jogo imersiva e realista aos seus jogadores. O servidor é baseado no mod SA-MP do jogo Grand Theft Auto: San Andreas, e requer que o jogador siga as regras estabelecidas pela equipe do servidor.</p>
+				<br />
+				
+				<p class="title">Abuso e modificações ilegais</p>
+				<p>A equipe do servidor não tolera nenhum tipo de abuso ou comportamento inadequado dos jogadores. Isso inclui, mas não se limita a, discriminação, assédio, trapaça, exploração de falhas do jogo e uso de modificações ilegais. Qualquer jogador que for pego cometendo essas infrações será punido pela equipe do servidor, podendo ter sua conta banida permanentemente.</p>
+				<br />
+				
+				<p class="title">Indisciplina</p>
+				<p>O servidor Formosa Roleplay requer que os jogadores sigam as regras estabelecidas pela equipe do servidor. Isso inclui, mas não se limita a, respeito aos demais jogadores, uso adequado do chat e dos canais de voz, e respeito às áreas de jogo restritas. Qualquer jogador que for pego desrespeitando essas regras será punido pela equipe do servidor, podendo ter sua conta banida temporariamente ou permanentemente.</p>
+				<br />
+				
+				<p class="title">Responsabilidade do jogador</p>
+				<p>O jogador é responsável pelo uso adequado de sua conta no servidor Formosa Roleplay. Isso inclui, mas não se limita a, manter sua senha segura e proteger suas informações pessoais. A equipe do servidor não se responsabiliza por danos causados ao jogador decorrentes de acesso não autorizado à sua conta.</p>
+				<br />
+				
+				<p class="title">Alterações nos Termos de Serviço</p>
+				<p>A equipe do servidor se reserva o direito de alterar estes Termos de Serviço a qualquer momento. Qualquer alteração será publicada no site do servidor. É responsabilidade do jogador verificar periodicamente os Termos de Serviço para estar ciente de quaisquer alterações.</p>
+				<br />
+				
+				<p class="title">Lei aplicável</p>
+				<p>Estes Termos de Serviço são regidos pelas leis da jurisdição em que o servidor Formosa Roleplay está localizado. Qualquer disputa decorrente destes Termos de Serviço será resolvida por meio de arbitragem na jurisdição em que o servidor está localizado.</p>
+				<br />
+
+				<p>Ao utilizar os serviços da equipe Formosa:MP, você reconhece que leu e compreendeu estes Termos de Serviço, e concorda em cumpri-los em sua totalidade.</p>
+			</fieldset>
+			<button class="next">Prosseguir</button>
+		</div>
+
+		<script>
+			const div = document.querySelector('.bg-system');
+			const width = div.offsetWidth || div.clientWidth;
+			const height = div.offsetHeight || div.clientHeight;
+			
+			div.style.left = 'calc(50% - ' + (width / 2) + 'px)';
+			div.style.bottom = 'calc(50% - ' + (height / 2) + 'px)';
+		</script>
+	</body>
+</html>
