@@ -69,6 +69,69 @@
 				color: white;
 			}
 		</style>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+	
+			.body * {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Poppins', sans-serif;
+			}
+	
+			.body {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+	
+			.box-container {
+				position: absolute;
+				top: 30px;
+				left: 35px;
+				border-radius: 12px 12px 12px 12px;
+				background-color: rgba(0, 0, 0, 0.5);
+				padding: 20px 15px 20px 25px;
+				display: flex;
+				align-items: center;
+				overflow: hidden;
+				transform: translateX(calc(-100% - 35px));
+				transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35)
+			}
+	
+			.box-container.active {
+				transform: translateX(0%);
+			}
+	
+			.box-container .message {
+				display: flex;
+				flex-direction: column;
+				margin: 0 20px;
+			}
+	
+			.box-container ion-icon {
+				width: 32px;
+				height: 32px;
+				background-color: blue;
+				font-size: 20px;
+				border-radius: 50%;
+			}
+	
+			.message .title-box {
+				font-size: 20px;
+				font-weight: 500;
+			}
+	
+			.box-container .progress-box {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 7px;
+				width: 100%;
+				background: blue;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="bg-system">
@@ -108,7 +171,8 @@
 			<button class="next" onclick="startLogin()">Prosseguir</button>
 		</div>
 		
-		<h1>texto qualquer</h1>
+		<div class="body">
+		</div>
 
 		<script>
 			const div = document.querySelector('.bg-system');
