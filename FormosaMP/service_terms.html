@@ -172,8 +172,20 @@
 		</div>
 		
 		<div class="body">
+			<div class="box-container">
+				<div class="icon-box">
+					<ion-icon name="alert-outline"></ion-icon>
+				</div>
+				<div class="message">
+					<span class="title-box">Formosa Multiplayer Informa:</span>
+					<p class="msg-box">Voce recebeu 10 reais de presente de Mister Blue<br> agradeca o por tudo</p>
+				</div>
+				<div class="progress-box"></div>
+			</div>
 		</div>
-
+		
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		
 		<script>
 			const div = document.querySelector('.bg-system');
 			const width = div.offsetWidth || div.clientWidth;
@@ -182,8 +194,53 @@
 			div.style.left = 'calc(50% - ' + (width / 2) + 'px)';
 			div.style.bottom = 'calc(50% - ' + (height / 2) + 'px)';
 			
-			function startLogin() {
-				alert('Aqui voce seria redirecionado para o cadastro!')
+			const container = document.querySelector('.box-container'),
+				progress = document.querySelector('.progress-box'),
+				title1 = document.querySelector('.title-box'),
+				msg1 = document.querySelector('.msg-box'),
+				color1 = document.querySelector('ion-icon');
+	
+			function ToCallBox(type = 1, title, msg, color, tempo) {
+				if (msg.length >= 80) {
+					return error;
+				}
+				else if (msg.length >= 40) {
+					let result = msg.substr(0, 40) + "<br>" + msg.substr(41, 80);
+					msg1.innerHTML = result;
+				}
+				else {
+					msg1.innerHTML = '<me style="color:white">' + msg + '</me>';
+				}
+				if (type == 1) {
+					color1.setAttribute('name', 'alert-outline')
+				} else if (type == 2) {
+					color1.setAttribute('name', 'checkmark-outline')
+				} else if (type == 3) {
+					color1.setAttribute('name', 'close-outline')
+				}
+				title1.innerHTML = '<me style="color:white">' + title + '</me>';
+				progress.style.background = color;
+				color1.style.background = color;
+				container.classList.add('active');
+				progress.classList.add('active');
+				updateProgressBarValue(100, tempo * 1000)
+			}
+	
+			function updateProgressBarValue(percentValue, timeMS) {
+				let currentWidth = 100;
+				let decrement = 100 / timeMS / 1000;
+	
+				const intervalId = setInterval(() => {
+					currentWidth -= decrement * timeMS;
+					console.log(currentWidth)
+					progress.style.width = `${currentWidth}%`;
+					if (currentWidth <= 0) {
+						clearInterval(intervalId);
+						container.classList.remove('active');
+						progress.classList.remove('active');
+						progress.style.width = '100%';
+					}
+				}, timeMS / 1000);
 			}
 		</script>
 	</body>
