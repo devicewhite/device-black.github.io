@@ -32,8 +32,8 @@ for(let i = 0; i < HighElements.length; i++)
 var bElement = document.createElement('b');
 bElement.innerHTML = 'DeviceBlack';
 bElement.style.fontSize = '20px';
-bElement.style.color = 'blue';
+bElement.style.color = 'white';
 bElement.style.position = 'fixed';
 bElement.style.right = '5px';
-bElement.style.bottom = '2%';
+bElement.style.bottom = '1%';
 document.body.appendChild(bElement);
