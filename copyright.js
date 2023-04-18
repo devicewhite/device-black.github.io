@@ -9,7 +9,7 @@ bElement.style.fontSize = '20px';
 bElement.style.color = 'blue';
 bElement.style.position = 'fixed';
 bElement.style.right = '5px';
-bElement.style.bottom = '10%';
+bElement.style.bottom = '2%';
 
 // Adiciona o elemento ao corpo do documento
 document.body.appendChild(bElement);
