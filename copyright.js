@@ -29,6 +29,8 @@ for(let i = 0; i < HighElements.length; i++)
 	boxLegend.style.marginLeft = '2px';
 }
 
+
+
 var bElement = document.createElement('b');
 bElement.innerHTML = 'DeviceBlack';
 bElement.style.fontSize = '20px';
